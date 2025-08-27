@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b976ebf75d02e4d768e79f72dbb15421, type: 3}
-  m_Name: Plane
+  m_Name: Plane 2
   m_EditorClassIdentifier: 
   textures:
-  - {fileID: 2800000, guid: d1e628528559d6746a29eb206267f7ad, type: 3}
-  - {fileID: 2800000, guid: 71005712417806a4d952668de89d4e97, type: 3}
-  - {fileID: 2800000, guid: becdda2e4042a9340a1322411afed6dc, type: 3}
-  - {fileID: 2800000, guid: 0faab4fac2b044743855b4cfe079472d, type: 3}
+  - {fileID: 2800000, guid: c7f543cf559214e7e84ae95ef70045fe, type: 3}
+  - {fileID: 2800000, guid: 1e432bb54ce204f6cb69d3d6092fa9dc, type: 3}
+  - {fileID: 2800000, guid: c6a055108c72f49a59958bd3d6303ac1, type: 3}
+  - {fileID: 2800000, guid: ea5eed4e2626d4e65989ae003471cb5f, type: 3}
+  - {fileID: 2800000, guid: fdb44301b52774ca7853a2154e6f506f, type: 3}
