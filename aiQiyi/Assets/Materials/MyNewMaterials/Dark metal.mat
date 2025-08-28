@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Dark metal
-  m_Shader: {fileID: -6465566751694194690, guid: e0cb4b01a337e4919b4a411a50945e22,
+  m_Shader: {fileID: -6465566751694194690, guid: 7ff77d5c8ebaa437a87a62f04e98af48,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
