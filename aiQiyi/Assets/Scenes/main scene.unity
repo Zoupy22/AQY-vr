@@ -5600,6 +5600,7 @@ GameObject:
   - component: {fileID: 1109746799}
   - component: {fileID: 1109746798}
   - component: {fileID: 1109746796}
+  - component: {fileID: 1109746801}
   m_Layer: 0
   m_Name: "\u9B3C\u5F71"
   m_TagString: Untagged
@@ -5635,7 +5636,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109746795}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5693,6 +5694,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 34.9, z: 57.22}
+--- !u!114 &1109746801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109746795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b64a82a70004068a2077239d9cdc8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minWaitTime: 1
+  maxWaitTime: 20
 --- !u!1001 &1157223284
 PrefabInstance:
   m_ObjectHideFlags: 0
