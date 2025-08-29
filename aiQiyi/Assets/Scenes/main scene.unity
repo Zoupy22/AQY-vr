@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 05279d4a58a8039479777249c5885a9d, type: 3}
   m_Sun: {fileID: 1776276933}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1287,6 +1286,7 @@ MonoBehaviour:
   m_Script: {fileID: 1732766619, guid: c011290a04936583ed373d28968a0c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LinkedTo: {fileID: 0}
 --- !u!23 &208777527
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1706,7 +1706,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 27f5945998955cb47b27a89d68b04ee8, type: 2}
+      objectReference: {fileID: 2100000, guid: 1aa2bcb3393054ffc8c141da78242d0c, type: 2}
     - target: {fileID: 919132149155446097, guid: d9ec57ddb451ee04393dd6f23cd29b78,
         type: 3}
       propertyPath: m_Name
@@ -1734,7 +1734,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &290247782
 Transform:
   m_ObjectHideFlags: 0
@@ -2931,6 +2931,7 @@ MonoBehaviour:
   m_Script: {fileID: 1732766619, guid: c011290a04936583ed373d28968a0c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LinkedTo: {fileID: 0}
 --- !u!23 &460076162
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3267,6 +3268,7 @@ MonoBehaviour:
   m_Script: {fileID: 1732766619, guid: c011290a04936583ed373d28968a0c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LinkedTo: {fileID: 0}
 --- !u!23 &524149417
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4146,7 +4148,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b2973a198046dbb49bace4388d4ee691,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.56
+      value: 6.85
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2973a198046dbb49bace4388d4ee691,
         type: 3}
@@ -4197,6 +4199,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u96FE\u6C14\u7403 (1)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2973a198046dbb49bace4388d4ee691,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5213,6 +5220,16 @@ PrefabInstance:
       propertyPath: targetLight
       value: 
       objectReference: {fileID: 1776276933}
+    - target: {fileID: 3280059754802522429, guid: 0b407a34c558c2147b8e0707dd0323c5,
+        type: 3}
+      propertyPath: targeGameObject
+      value: 
+      objectReference: {fileID: 1109746795}
+    - target: {fileID: 3280059754802522429, guid: 0b407a34c558c2147b8e0707dd0323c5,
+        type: 3}
+      propertyPath: targetfogMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: a6f48fd3f273647b7a462625bbe9477a, type: 2}
     - target: {fileID: 3756293789668708483, guid: 0b407a34c558c2147b8e0707dd0323c5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5403,8 +5420,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f2e44490b894282a291f563dbec60f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targeGameObject: {fileID: 0}
   targetLight: {fileID: 1776276933}
   targetMaterial: {fileID: 2100000, guid: 1bf57067a8393485da6c539deeef9d2c, type: 2}
+  targetfogMaterial: {fileID: 0}
   colorPalette: {fileID: 11400000, guid: 1122bf54c87454b87a219eab6ca29d9d, type: 2}
   transitionDuration: 1
 --- !u!65 &925703876
@@ -6407,7 +6426,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f49814e352db607489d16d53ae00a7a5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.33
+      value: -4.571
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f49814e352db607489d16d53ae00a7a5,
         type: 3}
@@ -6417,7 +6436,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f49814e352db607489d16d53ae00a7a5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.59
+      value: -3.415
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f49814e352db607489d16d53ae00a7a5,
         type: 3}
@@ -7505,17 +7524,17 @@ PrefabInstance:
     - target: {fileID: 2847456801833327053, guid: dc05f90f7904c4fd6aefc1f4b98fa4db,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.8841226
+      value: 1.595
       objectReference: {fileID: 0}
     - target: {fileID: 2847456801833327053, guid: dc05f90f7904c4fd6aefc1f4b98fa4db,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 2847456801833327053, guid: dc05f90f7904c4fd6aefc1f4b98fa4db,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.6960483
+      value: -7.485
       objectReference: {fileID: 0}
     - target: {fileID: 2847456801833327053, guid: dc05f90f7904c4fd6aefc1f4b98fa4db,
         type: 3}
@@ -7552,6 +7571,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3276367924545577646, guid: dc05f90f7904c4fd6aefc1f4b98fa4db,
+        type: 3}
+      propertyPath: lightTransform
+      value: 
+      objectReference: {fileID: 1776276934}
     - target: {fileID: 5141096224079983826, guid: dc05f90f7904c4fd6aefc1f4b98fa4db,
         type: 3}
       propertyPath: m_Name
@@ -9397,6 +9421,7 @@ MonoBehaviour:
   m_Script: {fileID: 1732766619, guid: c011290a04936583ed373d28968a0c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LinkedTo: {fileID: 0}
 --- !u!23 &1618765292
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9458,27 +9483,27 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b2973a198046dbb49bace4388d4ee691,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1389.4878
+      value: 1503
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2973a198046dbb49bace4388d4ee691,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 810.6333
+      value: 925.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2973a198046dbb49bace4388d4ee691,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1075.54
+      value: 875.23
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2973a198046dbb49bace4388d4ee691,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.83993
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2973a198046dbb49bace4388d4ee691,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.25
+      value: 7.49
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2973a198046dbb49bace4388d4ee691,
         type: 3}
@@ -9529,6 +9554,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u96FE\u6C14\u7403"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2973a198046dbb49bace4388d4ee691,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9981,6 +10011,7 @@ MonoBehaviour:
   m_Script: {fileID: 1732766619, guid: c011290a04936583ed373d28968a0c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LinkedTo: {fileID: 0}
 --- !u!23 &1682056820
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11369,11 +11400,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 27f5945998955cb47b27a89d68b04ee8, type: 2}
+      objectReference: {fileID: 2100000, guid: 1aa2bcb3393054ffc8c141da78242d0c, type: 2}
     - target: {fileID: 919132149155446097, guid: b9f3b441c86d6434d9a6f4696f4e5579,
         type: 3}
       propertyPath: m_Name
-      value: "\u673A\u5E8A1"
+      value: "\u673A\u5E8A"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class lightogclick : fogclick
 {
+    public GameObject targeGameObject; // 鬼影
     public Light targetLight; // 目标灯光
     public Material targetMaterial; // 目标材质，用于设置自发光颜色
-
+    public Material targetfogMaterial; // 目标材质，用于设置自发光颜色
     public ColorPalette colorPalette;
     public float transitionDuration = 1.0f; // 渐变持续时间
 
@@ -30,6 +31,7 @@ public class lightogclick : fogclick
         {
             // 获取下一个颜色索引
             nextIndex = (currentIndex + 1) % colorPalette.colors.Length;
+            targeGameObject.SetActive(nextIndex == 2);
             isTransitioning = true;
         }
     }
@@ -48,6 +50,11 @@ public class lightogclick : fogclick
             {
                 Color emissionColor = Color.Lerp(colorPalette.emissionColors[currentIndex], colorPalette.emissionColors[nextIndex], transitionProgress);
                 targetMaterial.SetColor("_EmissionColor", emissionColor);
+            }
+            if (targetfogMaterial != null)
+            {
+                Color emissionColor = Color.Lerp(colorPalette.fogColors[currentIndex], colorPalette.fogColors[nextIndex], transitionProgress);
+                targetfogMaterial.SetColor("_EmissionColor", emissionColor);
             }
             if (transitionProgress >= 1f)
             {
