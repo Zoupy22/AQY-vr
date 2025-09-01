@@ -267,10 +267,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f2e44490b894282a291f563dbec60f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targeGameObject: {fileID: 0}
   targetLight: {fileID: 0}
   targetMaterial: {fileID: 2100000, guid: 1bf57067a8393485da6c539deeef9d2c, type: 2}
+  targetfogMaterial: {fileID: 0}
   colorPalette: {fileID: 11400000, guid: 1122bf54c87454b87a219eab6ca29d9d, type: 2}
-  transitionDuration: 1
+  transitionDuration: 0.3
 --- !u!65 &4001914827855885641
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ public class cardfogclick : fogclick
 {
 
     public Texture texturePalette;
-    public float transitionDuration = 1.0f; // 渐变持续时间（如果有动画切换）
+    private float transitionDuration = 0.3f; // 渐变持续时间（如果有动画切换）
 
     private int currentIndex = 0; // 当前贴图索引
     private int nextIndex = 1; // 下一个贴图索引
