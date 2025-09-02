@@ -54,7 +54,7 @@ public class lightogclick : fogclick
             if (targetfogMaterial != null)
             {
                 Color emissionColor = Color.Lerp(colorPalette.fogColors[currentIndex], colorPalette.fogColors[nextIndex], transitionProgress);
-                targetfogMaterial.SetColor("_EmissionColor", emissionColor);
+                targetfogMaterial.SetColor("_FogColor", emissionColor);
             }
             if (transitionProgress >= 1f)
             {

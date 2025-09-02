@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class cardfogclick : fogclick
 {
-
+    private static List<cardfogclick> cardFogClicks = new List<cardfogclick>();
     public Texture texturePalette;
     private float transitionDuration = 0.3f; // 渐变持续时间（如果有动画切换）
 
@@ -16,6 +16,12 @@ public class cardfogclick : fogclick
     private string texturePropertyName = "_BaseMap"; // 材质的贴图属性名 (默认是 _MainTex)
     private string textureIndexPropertyName = "_Index"; // 材质的贴图属性名 (默认是 _MainTex)
     private int totalIndex = 5;
+    void Awake()
+    {
+        // 将当前实例添加到静态列表中
+        cardFogClicks.Add(this);
+    }
+
     void Start()
     {
         if (texturePalette == null)
@@ -56,13 +62,21 @@ public class cardfogclick : fogclick
 
     public override void Press()
     {
+        // 遍历并对所有的 cardfogclick 实例调用其 PressOnce 方法
+        foreach (cardfogclick cardFogClick in cardFogClicks)
+        {
+            cardFogClick.PressOnce();
+        }
+    }
+    private void PressOnce()
+    {
         // 如果当前没有正在切换的过程
         if (!isTransitioning)
         {
-            nextIndex = (currentIndex + 1) % totalIndex; 
+            nextIndex = (currentIndex + 1) % totalIndex;
 
-            isTransitioning = true; 
-            Debug.Log($"Switching to texture: {nextIndex}");
+            isTransitioning = true;
+            Debug.Log($"[{gameObject.name}] Switching to texture: {nextIndex}");
         }
     }
 }
