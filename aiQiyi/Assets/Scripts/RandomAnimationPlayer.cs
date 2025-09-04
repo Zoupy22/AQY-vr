@@ -1,46 +1,78 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+[RequireComponent(typeof(MeshRenderer))]
 public class RandomAnimationPlayer : MonoBehaviour
 {
-    private Animator animator; // 引用 Animator
-    private string animationTriggerName = "start"; // 动画触发器的名称
-    public float minWaitTime = 1.0f; // 最小随机等待时间
-    public float maxWaitTime = 20.0f; // 最大随机等待时间
+    [Header("Settings")]
+    public float speed = 2f;
+    public float hideAtX = 10f;
+    public Vector2 respawnTime = new Vector2(1f, 20f);
+
+    private Vector3 startPos;
+    private MeshRenderer mesh;
+    private float timer;
+    private float nextRespawnTime;
+    private bool isVisible; // 新增：可见状态标志
 
     void Start()
     {
-        // 如果没有直接分配 Animator，在当前 GameObject 上自动查找
-        if (animator == null)
-        {
-            animator = GetComponent<Animator>();
-        }
+        startPos = transform.position;
+        mesh = GetComponent<MeshRenderer>();
+        isVisible = mesh.enabled; // 初始化状态
+        ResetTimer();
     }
-   public void StartPlayAnimationWithRandomDelay()
-    {
-        // 如果没有直接分配 Animator，在当前 GameObject 上自动查找
-        if (animator == null)
-        {
-            animator = GetComponent<Animator>();
-        }
 
-        if (animator != null)
+    void Update()
+    {
+        if (isVisible)
         {
-            // 启动动画播放的循环协程
-            StartCoroutine(PlayAnimationWithRandomDelay());
+            MoveObject();
+            CheckHideCondition();
         }
         else
         {
-            Debug.LogError("Animator component is not assigned or found!");
+            UpdateRespawnTimer();
         }
     }
-    private IEnumerator PlayAnimationWithRandomDelay()
-    {
 
-        // 随机等待一段时间
-        float randomDelay = Random.Range(minWaitTime, maxWaitTime);
-        yield return new WaitForSeconds(randomDelay); // 等待
-                                                      // 触发动画
-        animator.SetTrigger(animationTriggerName);
+    void MoveObject()
+    {
+        transform.Translate(Vector3.left * speed * Time.deltaTime);
     }
+
+    void CheckHideCondition()
+    {
+        if (transform.position.x >= hideAtX)
+        {
+            Hide();
+        }
+    }
+
+    void UpdateRespawnTimer()
+    {
+        timer += Time.deltaTime;
+        if (timer >= nextRespawnTime)
+        {
+            Respawn();
+        }
+    }
+
+    void Hide()
+    {
+        isVisible = false;
+        mesh.enabled = false;
+        timer = 0f;
+        ResetTimer();
+    }
+
+    void Respawn()
+    {
+        transform.position = startPos;
+        isVisible = true;
+        mesh.enabled = true;
+    }
+
+    void ResetTimer() => nextRespawnTime = Random.Range(respawnTime.x, respawnTime.y);
+
+    public void Restart() => Respawn();
 }

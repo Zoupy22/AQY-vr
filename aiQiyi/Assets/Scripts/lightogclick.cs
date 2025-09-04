@@ -8,6 +8,7 @@ public class lightogclick : fogclick
     public Light targetLight; // 目标灯光
     public Material targetMaterial; // 目标材质，用于设置自发光颜色
     public Material targetfogMaterial; // 目标材质，用于设置自发光颜色
+    public Material targetbalckMaterial; // 目标材质，用于设置自发光颜色
     public ColorPalette colorPalette;
     public float transitionDuration = 1.0f; // 渐变持续时间
 
@@ -55,6 +56,11 @@ public class lightogclick : fogclick
             {
                 Color emissionColor = Color.Lerp(colorPalette.fogColors[currentIndex], colorPalette.fogColors[nextIndex], transitionProgress);
                 targetfogMaterial.SetColor("_FogColor", emissionColor);
+            }
+            if (targetbalckMaterial != null)
+            {
+                Color emissionColor = Color.Lerp(colorPalette.fogColors[currentIndex], colorPalette.fogColors[nextIndex], transitionProgress);
+                targetbalckMaterial.SetColor("_BaseColor", emissionColor);
             }
             if (transitionProgress >= 1f)
             {
