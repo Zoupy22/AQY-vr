@@ -6,6 +6,8 @@ public class cardfogclick : fogclick
     private static List<cardfogclick> cardFogClicks = new List<cardfogclick>();
     public Texture texturePalette;
     private float transitionDuration = 0.3f; // 渐变持续时间（如果有动画切换）
+    public bool isVerticalLayout = false; // 是否垂直排列（默认水平排列）
+    public int rows = 1; // 垂直排列时的行数（默认1行）
 
     private int currentIndex = 0; // 当前贴图索引
     private int nextIndex = 1; // 下一个贴图索引
@@ -15,7 +17,8 @@ public class cardfogclick : fogclick
     private Material targetMaterial; // 目标材质
     private string texturePropertyName = "_BaseMap"; // 材质的贴图属性名 (默认是 _MainTex)
     private string textureIndexPropertyName = "_Index"; // 材质的贴图属性名 (默认是 _MainTex)
-    private int totalIndex = 5;
+    private string textureyIndexPropertyName = "_yIndex"; // 材质的贴图属性名 (默认是 _MainTex)
+    public int totalIndex = 5;
     void Awake()
     {
         // 将当前实例添加到静态列表中
@@ -56,10 +59,29 @@ public class cardfogclick : fogclick
                 transitionProgress = 0f;
                 currentIndex = nextIndex; 
                 targetMaterial.SetInt(textureIndexPropertyName, currentIndex);
+                // 初始化 UV 偏移
+                UpdateTextureOffset(currentIndex);
             }
         }
     }
+    // 更新 UV 偏移（支持水平和垂直排列）
+    private void UpdateTextureOffset(int index)
+    {
+        if (texturePalette == null) return;
 
+        if (isVerticalLayout)
+        {
+            int row = index / rows;
+            int column = index % rows;
+
+            targetMaterial.SetInt(textureIndexPropertyName, column);
+            targetMaterial.SetInt(textureyIndexPropertyName, row);
+        }
+        else
+        {
+            targetMaterial.SetInt(textureIndexPropertyName, index);
+        }
+    }
     public override void Press()
     {
         // 遍历并对所有的 cardfogclick 实例调用其 PressOnce 方法

@@ -112,7 +112,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
-    - _EMISSION_ON: 1
+    - _EMISSION_ON: 0
     - _Emission: 1
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
@@ -133,6 +133,7 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - _tiiling_x: 0.2
     m_Colors:
     - _BaseColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

@@ -75,4 +75,9 @@ public class RandomAnimationPlayer : MonoBehaviour
     void ResetTimer() => nextRespawnTime = Random.Range(respawnTime.x, respawnTime.y);
 
     public void Restart() => Respawn();
+    // 物体被禁用时自动调用
+    void OnDisable()
+    {
+        Respawn();
+    }
 }

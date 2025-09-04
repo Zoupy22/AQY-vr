@@ -270,7 +270,8 @@ MonoBehaviour:
   targeGameObject: {fileID: 0}
   targetLight: {fileID: 0}
   targetMaterial: {fileID: 2100000, guid: 1bf57067a8393485da6c539deeef9d2c, type: 2}
-  targetfogMaterial: {fileID: 0}
+  targetfogMaterial: {fileID: 2100000, guid: a6f48fd3f273647b7a462625bbe9477a, type: 2}
+  targetbalckMaterial: {fileID: 0}
   colorPalette: {fileID: 11400000, guid: 1122bf54c87454b87a219eab6ca29d9d, type: 2}
   transitionDuration: 0.3
 --- !u!65 &4001914827855885641
