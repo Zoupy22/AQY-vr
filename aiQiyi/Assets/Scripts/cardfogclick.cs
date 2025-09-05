@@ -7,7 +7,7 @@ public class cardfogclick : fogclick
     public Texture texturePalette;
     private float transitionDuration = 0.3f; // 渐变持续时间（如果有动画切换）
     public bool isVerticalLayout = false; // 是否垂直排列（默认水平排列）
-    public int rows = 1; // 垂直排列时的行数（默认1行）
+    public int rowrandom = 1; // 垂直排列时的行数（默认1行）
 
     private int currentIndex = 0; // 当前贴图索引
     private int nextIndex = 1; // 下一个贴图索引
@@ -71,11 +71,11 @@ public class cardfogclick : fogclick
 
         if (isVerticalLayout)
         {
-            int row = index / rows;
-            int column = index % rows;
+            int columnrandom = Random.Range(0, rowrandom);
 
-            targetMaterial.SetInt(textureIndexPropertyName, column);
-            targetMaterial.SetInt(textureyIndexPropertyName, row);
+            targetMaterial.SetInt(textureIndexPropertyName, index);
+            targetMaterial.SetInt(textureyIndexPropertyName, columnrandom);
+            Debug.LogError("zhangtao-----" +columnrandom+"--"+ index);
         }
         else
         {

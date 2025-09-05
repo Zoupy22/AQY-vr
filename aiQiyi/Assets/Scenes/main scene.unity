@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 05279d4a58a8039479777249c5885a9d, type: 3}
   m_Sun: {fileID: 1776276933}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4068,8 +4067,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texturePalette: {fileID: 2800000, guid: b5490ee9bb0414f3583e4f5e4180b142, type: 3}
   isVerticalLayout: 1
-  rows: 5
-  totalIndex: 20
+  rowrandom: 4
+  totalIndex: 5
 --- !u!1001 &439860072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6585,7 +6584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texturePalette: {fileID: 2800000, guid: 34af4001e96bb45858170acb6e8fba1a, type: 3}
   isVerticalLayout: 0
-  rows: 1
+  rowrandom: 1
   totalIndex: 5
 --- !u!65 &848500373
 BoxCollider:
@@ -11243,7 +11242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texturePalette: {fileID: 2800000, guid: 3dfd9dd104a1f4831bbe8ca8ec14afac, type: 3}
   isVerticalLayout: 0
-  rows: 1
+  rowrandom: 1
   totalIndex: 5
 --- !u!65 &1383955202
 BoxCollider:
@@ -14938,7 +14937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texturePalette: {fileID: 2800000, guid: 21de445f43392485f8f7fb8df068817e, type: 3}
   isVerticalLayout: 0
-  rows: 1
+  rowrandom: 1
   totalIndex: 5
 --- !u!65 &1827317626
 BoxCollider:
@@ -16736,7 +16735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texturePalette: {fileID: 2800000, guid: 1ada055cce9d54d3fb1199b441a0304f, type: 3}
   isVerticalLayout: 0
-  rows: 1
+  rowrandom: 1
   totalIndex: 5
 --- !u!65 &2090883774
 BoxCollider:
@@ -20806,18 +20805,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3661485787250010763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5952165279989068572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &3662269434744602583
 Transform:
   m_ObjectHideFlags: 0
@@ -22979,7 +22966,7 @@ GameObject:
   - component: {fileID: 8028525211406471727}
   - component: {fileID: 3280059754417895420}
   - component: {fileID: 4001914826931235720}
-  - component: {fileID: 3661485787250010763}
+  - component: {fileID: 8028525211406471728}
   m_Layer: 0
   m_Name: "\u53F0\u706F (1)"
   m_TagString: Untagged
@@ -25196,6 +25183,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8028525211406471728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5952165279989068572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec180ed0ef74440b93237e826654f13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &8034597738731522504
 MeshFilter:
   m_ObjectHideFlags: 0
